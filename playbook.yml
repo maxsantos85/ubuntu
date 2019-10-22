@@ -1,0 +1,11 @@
+- hosts: all
+  remote_user: vagrant
+  tasks:
+    - name: Install Htop
+      apt:
+        name: htop
+        state: present
+    - name: Criando o user do Analista
+      user:
+        name: analista2
+        state: present
