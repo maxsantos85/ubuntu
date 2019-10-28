@@ -18,12 +18,14 @@ Vagrant.configure("2") do |config|
      v.cpus = 2
   end
 
-  ## Opções para Configurar a Máquina sem Gerência de Configuração
+  ## Integrando o Ansible no Provisionamento
 
-  #config.vm.provision :shell, path: "shellscript.sh"
-
-  config.vm.provision "shell", inline: <<-SHELL
-    touch /tmp/teste.txt
-  SHELL
+   config.vm.provision :ansible_local do |ansible|
+     ansible.install_mode = "default"
+     ansible.playbook = "playbook.yml"
+     ansible.verbose  = true
+     ansible.install  = true
+     ansible.limit    = "all"
+   end
 
 end

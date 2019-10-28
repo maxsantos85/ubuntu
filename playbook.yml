@@ -8,4 +8,4 @@
     - name: Criando o user do Analista
       user:
         name: analista2
-        state: present
+        state: present 
