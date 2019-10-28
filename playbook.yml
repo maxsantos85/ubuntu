@@ -7,5 +7,5 @@
         state: present
     - name: Criando o user do Analista
       user:
-        name: analista2
+        name: analista
         state: present 
